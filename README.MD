@@ -16,7 +16,7 @@ To use the devcontainer, users will need the following:
 
 ## Usage
 
-To use the devcontainer, follow these steps:
+### To use the devcontainer, follow these steps:
 
 1. Clone this repository.
 ```
@@ -26,6 +26,67 @@ git clone https://github.com/ykinfo/devcontainer-hugo-extend-0.88.1.git
 2. Open the folder of this repository in Visual Studio Code.
 3. Click on the "><" icon in the bottom left and open the container remotely.
 4. The development environment for using Hugo is now ready.
+
+### to start hugo
+#### Setup
+
+1. Create a new directory for your site. For example, run the following command:
+```
+mkdir myblog
+```
+
+2. Change to the new directory, and build the site by running the following command:
+```
+cd myblog
+hugo
+```
+
+#### Create Site
+
+1. To create a new Hugo site, run the following command: 
+```
+hugo new site [site-name]
+```
+
+2. To create a new page, navigate to the site's directory and run the following command: 
+```
+cd [site-name]
+hugo new [section-name]/[post-name].md
+```
+
+For example: 
+```
+hugo new post/hello-world.md
+```
+
+#### Run Server
+
+To run the Hugo development server, use the following command: 
+```
+hugo server -D
+```
+
+#### When Using Theme
+
+1. To install a theme, navigate to the site's directory and create a "themes" directory: 
+```
+cd [site-name]
+mkdir themes
+```
+
+2. Add the theme as a Git submodule: 
+```
+git submodule add https://github.com/chipzoller/hugo-clarity.git themes/hugo-clarity
+```
+
+3. Edit the `config.toml` file in the root directory of your site and modify the values as needed. For example:
+```
+baseURL = "http://localhost:1313"
+languageCode = "ja-jp"
+title = "My New Hugo Site"
+
+theme = "hugo-clarity"
+```
 
 ## License
 
